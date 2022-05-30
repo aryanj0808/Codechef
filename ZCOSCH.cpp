@@ -2,16 +2,17 @@
 using namespace std;
 
 int main() {
-    int r;
-	cin>>r;
-	if(r>100){
-	    printf("0");
+	// your code goes here
+	int n;
+	cin>>n;
+	if(n>50 && n<101){
+	    cout<<"50"<<endl;
 	}
-	else if(r>50){
-	    printf("50");
+	else if(n<51){
+	    cout<<"100"<<endl;
 	}
 	else{
-	    printf("100");
+	    cout<<"0"<<endl;
 	}
 	return 0;
 }

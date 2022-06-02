@@ -1,31 +1,32 @@
 #include <iostream>
 using namespace std;
-// allocate more than necessary
-int A[112345];
+
 int main() {
-    int T;
-    cin >> T;
-    for (int j = 1; j <= T; j++) {
-        // we use 'cas' because 'case' is a keyword
-        int N;
-        cin >> N;
-        int count = 0;
-        for (int i = 1; i <= N; i++) {
-            cin >> A[i];
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        int ar[n];
+        int count=0;
+        for(int i=0;i<n;i++){
+            cin>>ar[i];
         }
-        for (int i = 1; i <= N; i++) {
-            if(i > 1){
-                if(A[i] != A[i - 1]){
-                    count++;
-                    continue;
+        for(int i=0;i<n-1;i++){
+            if(ar[i]!=ar[i+1]){
+                if(i==0){
+                    count+=2;
                 }
-            }
-            if(i < N){
-                if(A[i] != A[i + 1]){
+                else if(ar[i]!=ar[i-1]){
                     count++;
                 }
+                else{
+                    count+=2;
+                }
             }
         }
-        cout << count << '\n';
+        cout<<count<<endl;
     }
+	// your code goes here
+	return 0;
 }
